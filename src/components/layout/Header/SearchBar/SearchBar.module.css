@@ -1,10 +1,25 @@
 .searchBarContainer {
     display: flex;
+<<<<<<< Updated upstream
     flex: 6;
     align-items: center;
     border: 1px var(--border-color) solid;
     border-radius: 4px;
     max-height: 70px;
+=======
+    flex: 2;
+    align-items: center;
+    border: 1px var(--border-color) solid;
+    border-radius: 4px;
+    height: 50px;
+    padding-left: 1%;
+    gap: 2%;
+    min-width: 0;
+}
+
+.searchBarContainer:hover {
+    cursor: text;
+>>>>>>> Stashed changes
 }
 
 .input {
@@ -13,6 +28,10 @@
     border: none;
     outline: none;
     height: 50%;
+<<<<<<< Updated upstream
+=======
+    min-width: 0;
+>>>>>>> Stashed changes
 }
 
 .searchIcon {
@@ -20,5 +39,13 @@
     max-width: 100%;
     max-height: 70%;
     object-fit: cover;
+<<<<<<< Updated upstream
     filter: invert(40%)
+=======
+    filter: invert(40%);
+}
+
+input::placeholder {
+    color: var(--font-color);
+>>>>>>> Stashed changes
 }

@@ -9,6 +9,11 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+<<<<<<< Updated upstream
+=======
+  padding-left: 280px;
+  padding-right: 280px;
+>>>>>>> Stashed changes
 }
 
 
@@ -19,4 +24,9 @@ code {
 
 :root {
   --border-color: #c8c8c8;
+<<<<<<< Updated upstream
 }
+=======
+  --font-color: #9ca3a3;
+}
+>>>>>>> Stashed changes

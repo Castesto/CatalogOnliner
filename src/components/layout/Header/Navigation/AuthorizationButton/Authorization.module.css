@@ -1,0 +1,16 @@
+.signUP {
+    border: 1px solid var(--border-color);
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    flex: 3;
+}
+
+.signUP:hover {
+    border-color: black;
+    color: black;
+    cursor: pointer;
+}

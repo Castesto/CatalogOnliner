@@ -3,4 +3,9 @@
     flex-direction: row;
     gap: 5%;
     padding: 40px;
+<<<<<<< Updated upstream
+=======
+    align-items: center;
+    color: var(--font-color)
+>>>>>>> Stashed changes
 }

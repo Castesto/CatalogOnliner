@@ -1,0 +1,1 @@
+export { AuthorizationButton as Authorization} from './AuthorizationButton'
