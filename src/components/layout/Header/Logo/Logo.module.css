@@ -1,12 +1,8 @@
 .logo {
-<<<<<<< Updated upstream
-    max-width: 200px;
-    flex: 1;
-=======
     display: block;
     max-width: 200px;
     flex: 1;
     aspect-ratio: 16/9;
     object-fit: contain;
->>>>>>> Stashed changes
+    margin-top: -15px;
 }

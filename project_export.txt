@@ -1,64 +1,7 @@
 PROJECT EXPORT REPORT
 ===========================================
 Path: c:\Users\Lenovo\Desktop\ЛабВэб\onliner-catalog
-Date: 20.09.2026, 22:06:20
-===========================================
-
-######### File: jsconfig.json #########
-{
-  "compilerOptions": {
-    "baseUrl": "src"
-  },
-  "include": ["src"]
-}
-
-######### File: package.json #########
-{
-  "name": "onliner-catalog",
-  "version": "0.1.0",
-  "private": true,
-  "dependencies": {
-    "@testing-library/dom": "^10.4.2",
-    "@testing-library/jest-dom": "^6.9.1",
-    "@testing-library/react": "^16.3.3",
-    "@testing-library/user-event": "^13.5.0",
-    "react": "^19.3.0",
-    "react-dom": "^19.3.0",
-    "react-scripts": "5.0.1",
-    "web-vitals": "^2.1.4"
-  },
-  "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
-  },
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
-    ]
-  },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
-  }
-}
-
-
-######### File: project_export.txt #########
-PROJECT EXPORT REPORT
-===========================================
-Path: c:\Users\Lenovo\Desktop\ЛабВэб\onliner-catalog
-Date: 20.09.2026, 19:56:51
+Date: 20.09.2026, 23:42:13
 ===========================================
 
 ######### File: jsconfig.json #########
@@ -475,631 +418,7 @@ export { Header } from './Header'
 ######### File: src\components\layout\Header\Logo\index.js #########
 export { Logo } from './Logo'
 
-######### File: src\components\layout\Header\Logo\Logo.jsx #########
-import React, { Component } from 'react'
-import logo from 'components/assets/images/onliner_logo.v3@2x.png'
-import styles from './Logo.module.css'
-
-export class Logo extends Component {
-    render() {
-        return (
-            <img className={styles.logo} src={logo} ></img>
-        )
-    }
-}
-
-######### File: src\components\layout\Header\Logo\Logo.module.css #########
-.logo {
-    display: block;
-    max-width: 200px;
-    flex: 1;
-    aspect-ratio: 16/9;
-    object-fit: contain;
-}
-
-######### File: src\components\layout\Header\Navigation\AuthorizationButton\Authorization.module.css #########
-.signUP {
-    border: 1px solid var(--border-color);
-    width: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-top-left-radius: 5px;
-    border-bottom-left-radius: 5px;
-}
-
-.signUP:hover {
-    border-color: black;
-    color: black;
-    cursor: pointer;
-}
-
-######### File: src\components\layout\Header\Navigation\AuthorizationButton\AuthorizationButton.jsx #########
-import React, { Component } from 'react'
-import styles from './Authorization.module.css'
-
-export class AuthorizationButton extends Component {
-    render() {
-        return (
-            <div className={styles.signUP} type='button'>Вход</div>
-        )
-    }
-}
-
-######### File: src\components\layout\Header\Navigation\AuthorizationButton\index.js #########
-export { AuthorizationButton as Authorization} from './AuthorizationButton'
-
-######### File: src\components\layout\Header\Navigation\index.js #########
-export { Navigation } from './Navigation'
-
-######### File: src\components\layout\Header\Navigation\Navigation.jsx #########
-import React, { Component } from 'react'
-import { Authorization } from './AuthorizationButton'
-import { SocialMediaButtons } from './SocialMediaButtons'
-import styles from './Navigation.module.css'
-
-export class Navigation extends Component {
-    render() {
-        return (
-            <nav className={styles.navBar}>
-                <Authorization></Authorization>
-                <SocialMediaButtons></SocialMediaButtons>
-            </nav>
-        )
-}
-}
-
-######### File: src\components\layout\Header\Navigation\Navigation.module.css #########
-.navBar {
-    flex:1;
-    display: flex;
-    flex-direction: row;
-    height: 50px;
-}
-
-######### File: src\components\layout\Header\Navigation\SocialMediaButtons\index.js #########
-export { SocialMediaButtons } from './SocialMediaButtons'
-
-######### File: src\components\layout\Header\Navigation\SocialMediaButtons\SocialMediaButtons.css #########
-.button {
-    border: 1px var(--border-color);
-}
-
-######### File: src\components\layout\Header\Navigation\SocialMediaButtons\SocialMediaButtons.jsx #########
-import React, { Component } from 'react'
-import styles from './SocialMediaButtons.css'
-
-export class SocialMediaButtons extends Component {
-    render() {
-        return (
-            <>
-                <div className={styles.button}>F</div>
-                <div>F</div>
-                <div>F</div>
-            </>
-        )
-    }
-}
-
-######### File: src\components\layout\Header\SearchBar\index.js #########
-export { SearchBar} from './SearchBar'
-
-######### File: src\components\layout\Header\SearchBar\SearchBar.jsx #########
-import React, { Component, createRef } from 'react'
-import styles from './SearchBar.module.css'
-import { SearchBarIcon } from './SearchBarIcon'
-
-export class SearchBar extends Component {
-    inputRef = createRef();
-
-    handleContainerClick = () => {
-        this.inputRef.current?.focus()
-    }
-
-    render() {
-        return (
-            <div className={styles.searchBarContainer}
-            onClick={this.handleContainerClick}
-            >
-                <SearchBarIcon />
-                <input
-                    ref={this.inputRef}
-                    className={styles.input}
-                    placeholder='Поиск в каталоге'
-                >
-                </input>
-            </div>
-        )
-    }
-}
-
-######### File: src\components\layout\Header\SearchBar\SearchBar.module.css #########
-.searchBarContainer {
-    display: flex;
-    flex: 6;
-    align-items: center;
-    border: 1px var(--border-color) solid;
-    border-radius: 4px;
-    height: 50px;
-    padding-left: 1%;
-    gap: 2%;
-    min-width: 0;
-}
-
-.searchBarContainer:hover {
-    cursor: text;
-}
-
-.input {
-    flex:99;
-    width: 100%;
-    border: none;
-    outline: none;
-    height: 50%;
-    min-width: 0;
-}
-
-.searchIcon {
-    flex: 1;
-    max-width: 100%;
-    max-height: 70%;
-    object-fit: cover;
-    filter: invert(40%);
-}
-
-input::placeholder {
-    color: var(--font-color);
-}
-
-######### File: src\components\layout\Header\SearchBar\SearchBarIcon.jsx #########
-import React, {Component} from 'react'
-import logoImg from 'components/assets/images/icon_поиск.png'
-import styles from './SearchBar.module.css'
-
-export class SearchBarIcon extends Component {
-    render() {
-        return (
-            <img src={logoImg} className={styles.searchIcon} />
-        )
-    }
-}
-
-
-######### File: src\index.css #########
-*, *::before, *::after {
-    box-sizing: border-box;
-}
-
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  padding-left: 280px;
-  padding-right: 280px;
-}
-
-
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
-}
-
-:root {
-  --border-color: #c8c8c8;
-  --font-color: #9ca3a3;
-}
-
-######### File: src\index.js #########
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
-
-const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
-);
-
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
-
-
-######### File: src\reportWebVitals.js #########
-const reportWebVitals = onPerfEntry => {
-  if (onPerfEntry && onPerfEntry instanceof Function) {
-    import('web-vitals').then(({ getCLS, getFID, getFCP, getLCP, getTTFB }) => {
-      getCLS(onPerfEntry);
-      getFID(onPerfEntry);
-      getFCP(onPerfEntry);
-      getLCP(onPerfEntry);
-      getTTFB(onPerfEntry);
-    });
-  }
-};
-
-export default reportWebVitals;
-
-
-######### File: src\setupTests.js #########
-// jest-dom adds custom jest matchers for asserting on DOM nodes.
-// allows you to do things like:
-// expect(element).toHaveTextContent(/react/i)
-// learn more: https://github.com/testing-library/jest-dom
-import '@testing-library/jest-dom';
-
-
-
-
-######### File: public\index.html #########
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="#000000" />
-    <meta
-      name="description"
-      content="Web site created using create-react-app"
-    />
-    <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
-    <!--
-      manifest.json provides metadata used when your web app is installed on a
-      user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
-    -->
-    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
-    <!--
-      Notice the use of %PUBLIC_URL% in the tags above.
-      It will be replaced with the URL of the `public` folder during the build.
-      Only files inside the `public` folder can be referenced from the HTML.
-
-      Unlike "/favicon.ico" or "favicon.ico", "%PUBLIC_URL%/favicon.ico" will
-      work correctly both with client-side routing and a non-root public URL.
-      Learn how to configure a non-root public URL by running `npm run build`.
-    -->
-    <title>React App</title>
-  </head>
-  <body>
-    <noscript>You need to enable JavaScript to run this app.</noscript>
-    <div id="root"></div>
-    <!--
-      This HTML file is a template.
-      If you open it directly in the browser, you will see an empty page.
-
-      You can add webfonts, meta tags, or analytics to this file.
-      The build step will place the bundled scripts into the <body> tag.
-
-      To begin the development, run `npm start` or `yarn start`.
-      To create a production bundle, use `npm run build` or `yarn build`.
-    -->
-  </body>
-</html>
-
-
-######### File: public\manifest.json #########
-{
-  "short_name": "React App",
-  "name": "Create React App Sample",
-  "icons": [
-    {
-      "src": "favicon.ico",
-      "sizes": "64x64 32x32 24x24 16x16",
-      "type": "image/x-icon"
-    },
-    {
-      "src": "logo192.png",
-      "type": "image/png",
-      "sizes": "192x192"
-    },
-    {
-      "src": "logo512.png",
-      "type": "image/png",
-      "sizes": "512x512"
-    }
-  ],
-  "start_url": ".",
-  "display": "standalone",
-  "theme_color": "#000000",
-  "background_color": "#ffffff"
-}
-
-
-######### File: public\robots.txt #########
-# https://www.robotstxt.org/robotstxt.html
-User-agent: *
-Disallow:
-
-
-######### File: README.md #########
-# Getting Started with Create React App
-
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-
-## Available Scripts
-
-In the project directory, you can run:
-
-### `npm start`
-
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
-
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
-
-
-######### File: settings.json #########
-{
-  "extensions": {
-    ".txt": true,
-    ".js": true,
-    ".ts": true,
-    ".jsx": true,
-    ".tsx": true,
-    ".json": true,
-    ".css": true,
-    ".scss": true,
-    ".html": true,
-    ".xml": true,
-    ".md": true,
-    ".py": true,
-    ".java": true,
-    ".cpp": true,
-    ".h": true,
-    ".c": true,
-    ".cs": true,
-    ".php": true,
-    ".rb": true,
-    ".go": true,
-    ".rs": true,
-    ".sql": true,
-    ".yaml": true,
-    ".yml": true,
-    ".sh": true,
-    ".bat": true,
-    ".ps1": true,
-    ".gradle": true,
-    ".properties": true,
-    ".ini": true,
-    ".cfg": true,
-    ".conf": true,
-    ".vue": true,
-    ".svelte": true
-  },
-  "ignorePatterns": [
-    "node_modules",
-    "build",
-    "dist",
-    "out",
-    "bin",
-    ".git",
-    ".vscode",
-    ".idea",
-    ".gradle",
-    "gradle",
-    "generated",
-    "logs",
-    "crash-reports",
-    ".metadata",
-    ".settings",
-    "eclipse"
-  ],
-  "ignoreFiles": [
-    "package-lock.json",
-    "gradlew",
-    "gradlew.bat",
-    "gradle-wrapper.jar",
-    "gradle-wrapper.properties",
-    ".DS_Store",
-    "Thumbs.db",
-    ".project",
-    ".classpath",
-    ".factorypath",
-    "CREDITS.txt",
-    "LICENSE.txt",
-    "README.txt",
-    "changelog.txt"
-  ],
-  "ignoreExtensions": [
-    ".iml",
-    ".ipr",
-    ".iws",
-    ".class",
-    ".jar",
-    ".log",
-    ".bak",
-    ".svg",
-    ".png",
-    ".jpg",
-    ".jpeg",
-    ".gif",
-    ".ico",
-    ".mp3",
-    ".wav",
-    ".ogg",
-    ".mp4",
-    ".avi",
-    ".mov",
-    ".exe",
-    ".dll",
-    ".so",
-    ".dylib",
-    ".zip",
-    ".rar",
-    ".7z",
-    ".tar",
-    ".gz"
-  ]
-}
-
-######### File: src\App.css #########
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-
-######### File: src\App.js #########
-import logo from './logo.svg';
-import './App.css';
-import React, { Component } from 'react'
-
-import { Header } from './components/layout/Header'
-
-class App extends Component {
-
-  render() {
-    return (
-      <Header></Header>
-    );
-  }
-}
-
-export default App;
-
-
-######### File: src\App.test.js #########
-import { render, screen } from '@testing-library/react';
-import App from './App';
-
-test('renders learn react link', () => {
-  render(<App />);
-  const linkElement = screen.getByText(/learn react/i);
-  expect(linkElement).toBeInTheDocument();
-});
-
-
-######### File: src\components\layout\Header\Header.jsx #########
-import React, { Component } from 'react'
-import { Logo } from './Logo'
-import { SearchBar } from './SearchBar'
-import { Navigation } from './Navigation'
-import styles from './Header.module.css'
-
-export class Header extends Component {
-    render() {
-        return (
-            <header className={styles.header}>
-                <Logo></Logo>
-                <SearchBar></SearchBar>
-                <Navigation></Navigation>
-            </header>
-        )
-    }
-}
-
-
-######### File: src\components\layout\Header\Header.module.css #########
-.header {
-    display: flex;
-    flex-direction: row;
-    gap: 5%;
-    padding: 40px;
-    align-items: center;
-    color: var(--font-color)
-}
-
-######### File: src\components\layout\Header\index.js #########
-export { Header } from './Header'
-
-######### File: src\components\layout\Header\Logo\index.js #########
+######### File: src\components\layout\Header\Logo\index.jsx #########
 export { Logo } from './Logo'
 
 ######### File: src\components\layout\Header\Logo\Logo.jsx #########
@@ -1122,6 +441,7 @@ export class Logo extends Component {
     flex: 1;
     aspect-ratio: 16/9;
     object-fit: contain;
+    margin-top: -15px;
 }
 
 ######### File: src\components\layout\Header\Navigation\AuthorizationButton\Authorization.module.css #########
@@ -1133,7 +453,7 @@ export class Logo extends Component {
     align-items: center;
     border-top-left-radius: 5px;
     border-bottom-left-radius: 5px;
-    flex: 3;
+    flex: 2;
 }
 
 .signUP:hover {
@@ -1182,30 +502,27 @@ export class Navigation extends Component {
     flex:1;
     display: flex;
     flex-direction: row;
-    height: 50px;
+    height: 40px;
 }
 
 ######### File: src\components\layout\Header\Navigation\SocialMediaButtons\Button.jsx #########
 import React, { Component } from 'react'
 import styles from './SocialMediaButtons.module.css'
-import facebook from './Facebook.module.css'
 
 class Button extends Component {
+
     render() {
+        const { text, logoImg, ...rest } = this.props
+
         return (
             <>
-                <div>{this.props.text}</div>
+                <div {...rest}><img src={logoImg}/></div>
             </>
         )
     }
 }
 
 export default Button
-
-######### File: src\components\layout\Header\Navigation\SocialMediaButtons\Facebook.module.css #########
-.facebook:hover {
-    color: blue;
-}
 
 ######### File: src\components\layout\Header\Navigation\SocialMediaButtons\index.js #########
 export { SocialMediaButtons } from './SocialMediaButtons'
@@ -1214,31 +531,91 @@ export { SocialMediaButtons } from './SocialMediaButtons'
 import React, { Component } from 'react'
 import styles from './SocialMediaButtons.module.css'
 import Button from './Button'
-import facebook from './Facebook.module.css'
+import facebookLogo from 'components/assets/images/facebookLogo.png'
+
+const SOCIALS = [
+    { name: 'facebook', image: facebookLogo },
+    { name: 'vk', image: '' },
+    { name: 'google', image: ''},
+    { name: 'cart', image: '' },
+]
 
 export class SocialMediaButtons extends Component {
     render() {
         return (
-            <>
-                <Button className={`${styles.button} ${facebook.facebook}`} text='F'></Button>
-                <Button text='F'></Button>
-                <Button text='F'></Button>
-            </>
+            <div className={styles.list}>
+                {SOCIALS.map(({ name, image }) => (
+                    <Button
+                        key={name}
+                        className={`${styles.button} ${styles[name]}`}
+                        logoImg={image}
+                    />
+                ))}
+            </div>
         )
     }
 }
 
 ######### File: src\components\layout\Header\Navigation\SocialMediaButtons\SocialMediaButtons.module.css #########
+.list {
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+    height: 100%;
+    flex: 3;
+}
+
 .button {
     flex: 1;
     border: 1px var(--border-color) solid;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.facebook, .vk, .google {
     border-left: none;
+}
+
+.facebook:hover {
+    color: #3a5998;
+    border: 1px solid black;
+}
+
+.vk:hover {
+    color: #507299;
+    border: 1px solid black;
+
+}
+
+.google:hover {
+    border: 1px solid black;
+    color: #db4437;
+}
+
+.google {
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+.cart {
+    border-radius: 5px;
+    margin-left: 10px;
+}
+
+img {
+    object-fit: cover;
+    filter: hue-rotate(180);
 }
 
 ######### File: src\components\layout\Header\SearchBar\index.js #########
 export { SearchBar} from './SearchBar'
 
+######### File: src\components\layout\Header\SearchBar\index.jsx #########
+export { SearchBar} from './SearchBar'
+
 ######### File: src\components\layout\Header\SearchBar\SearchBar.jsx #########
+
 import React, { Component, createRef } from 'react'
 import styles from './SearchBar.module.css'
 import { SearchBarIcon } from './SearchBarIcon'
@@ -1274,7 +651,7 @@ export class SearchBar extends Component {
     align-items: center;
     border: 1px var(--border-color) solid;
     border-radius: 4px;
-    height: 50px;
+    height: 40px;
     padding-left: 1%;
     gap: 2%;
     min-width: 0;
@@ -1345,6 +722,7 @@ code {
   --border-color: #c8c8c8;
   --font-color: #9ca3a3;
 }
+
 
 ######### File: src\index.js #########
 import React from 'react';

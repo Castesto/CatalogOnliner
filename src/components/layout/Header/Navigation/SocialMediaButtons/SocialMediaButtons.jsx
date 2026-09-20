@@ -6,6 +6,7 @@ const SOCIALS = [
     { name: 'facebook', label: 'F'  },
     { name: 'vk', label: 'VK' },
     { name: 'google', label: 'G' },
+    { name: 'cart', label: '🛒' },
 ]
 
 export class SocialMediaButtons extends Component {

@@ -9,21 +9,45 @@
 .button {
     flex: 1;
     border: 1px var(--border-color) solid;
-    border-left: none;
     display: flex;
     justify-content: center;
-    align-items: center
-    ;
+    align-items: center;
+}
+
+.facebook, .vk, .google {
+    border-left: none;
+    font-weight: 600;
+    cursor: pointer;
 }
 
 .facebook:hover {
     color: #3a5998;
+    border: 1px solid black;
 }
 
 .vk:hover {
     color: #507299;
+    border: 1px solid black;
+
 }
 
 .google:hover {
+    border: 1px solid black;
     color: #db4437;
 }
+
+.cart:hover {
+    border: 1px solid black;
+}
+
+.google {
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+.cart {
+    border-radius: 5px;
+    margin-left: 10px;
+    cursor: pointer;
+}
+
