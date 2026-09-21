@@ -1,7 +1,7 @@
 PROJECT EXPORT REPORT
 ===========================================
 Path: c:\Users\Lenovo\Desktop\ЛабВэб\onliner-catalog
-Date: 20.09.2026, 23:42:13
+Date: 21.09.2026, 19:26:52
 ===========================================
 
 ######### File: jsconfig.json #########
@@ -409,7 +409,8 @@ export class Header extends Component {
     gap: 5%;
     padding: 40px;
     align-items: center;
-    color: var(--font-color)
+    color: var(--font-color);
+    min-width: 0;
 }
 
 ######### File: src\components\layout\Header\index.js #########
@@ -499,10 +500,11 @@ export class Navigation extends Component {
 
 ######### File: src\components\layout\Header\Navigation\Navigation.module.css #########
 .navBar {
-    flex:1;
+    flex: 1;
     display: flex;
     flex-direction: row;
     height: 40px;
+    min-width: 0;
 }
 
 ######### File: src\components\layout\Header\Navigation\SocialMediaButtons\Button.jsx #########
@@ -512,11 +514,11 @@ import styles from './SocialMediaButtons.module.css'
 class Button extends Component {
 
     render() {
-        const { text, logoImg, ...rest } = this.props
+        const { text, ...rest } = this.props
 
         return (
             <>
-                <div {...rest}><img src={logoImg}/></div>
+                <div {...rest}>{text}</div>
             </>
         )
     }
@@ -531,24 +533,23 @@ export { SocialMediaButtons } from './SocialMediaButtons'
 import React, { Component } from 'react'
 import styles from './SocialMediaButtons.module.css'
 import Button from './Button'
-import facebookLogo from 'components/assets/images/facebookLogo.png'
 
 const SOCIALS = [
-    { name: 'facebook', image: facebookLogo },
-    { name: 'vk', image: '' },
-    { name: 'google', image: ''},
-    { name: 'cart', image: '' },
+    { name: 'facebook', label: 'F'  },
+    { name: 'vk', label: 'VK' },
+    { name: 'google', label: 'G' },
+    { name: 'cart', label: '🛒' },
 ]
 
 export class SocialMediaButtons extends Component {
     render() {
         return (
             <div className={styles.list}>
-                {SOCIALS.map(({ name, image }) => (
+                {SOCIALS.map(({ name, label }) => (
                     <Button
                         key={name}
                         className={`${styles.button} ${styles[name]}`}
-                        logoImg={image}
+                        text={label}
                     />
                 ))}
             </div>
@@ -575,6 +576,8 @@ export class SocialMediaButtons extends Component {
 
 .facebook, .vk, .google {
     border-left: none;
+    font-weight: 600;
+    cursor: pointer;
 }
 
 .facebook:hover {
@@ -593,6 +596,10 @@ export class SocialMediaButtons extends Component {
     color: #db4437;
 }
 
+.cart:hover {
+    border: 1px solid black;
+}
+
 .google {
     border-top-right-radius: 5px;
     border-bottom-right-radius: 5px;
@@ -601,12 +608,10 @@ export class SocialMediaButtons extends Component {
 .cart {
     border-radius: 5px;
     margin-left: 10px;
+    cursor: pointer;
 }
 
-img {
-    object-fit: cover;
-    filter: hue-rotate(180);
-}
+
 
 ######### File: src\components\layout\Header\SearchBar\index.js #########
 export { SearchBar} from './SearchBar'
@@ -647,7 +652,7 @@ export class SearchBar extends Component {
 ######### File: src\components\layout\Header\SearchBar\SearchBar.module.css #########
 .searchBarContainer {
     display: flex;
-    flex: 2;
+    flex: 2 1 200px;
     align-items: center;
     border: 1px var(--border-color) solid;
     border-radius: 4px;
@@ -708,8 +713,8 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  padding-left: 280px;
-  padding-right: 280px;
+  padding-left: 10vw;
+  padding-right: 10vw;
 }
 
 

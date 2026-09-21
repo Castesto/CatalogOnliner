@@ -1,5 +1,7 @@
-*, *::before, *::after {
-    box-sizing: border-box;
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
 }
 
 body {
@@ -9,8 +11,13 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  padding-left: 280px;
-  padding-right: 280px;
+  background: linear-gradient(to bottom,
+      #ffffff 0px,
+      #ffffff 100px,
+      var(--background-color) 100%);
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: 100% 100vh;
 }
 
 
@@ -22,4 +29,10 @@ code {
 :root {
   --border-color: #c8c8c8;
   --font-color: #9ca3a3;
+  --background-color: #e3e3e3;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding-left: clamp(16px, 1vw, 80px);
+  padding-right: clamp(16px, 1vw, 80px);
+  width: 100%;
 }

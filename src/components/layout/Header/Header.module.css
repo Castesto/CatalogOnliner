@@ -4,5 +4,6 @@
     gap: 5%;
     padding: 40px;
     align-items: center;
-    color: var(--font-color)
+    color: var(--font-color);
+    min-width: 0;
 }
