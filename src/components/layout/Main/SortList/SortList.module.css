@@ -1,0 +1,24 @@
+.sortContainer {
+    display: flex;
+    justify-content: flex-end;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.sort {
+    position: relative;          
+    width: max-content;
+    color: #3091ff;
+    cursor: pointer;
+    margin-bottom: 200px;
+}
+
+.select {
+    position: absolute;
+    inset: 0;                    
+    width: 100%;
+    height: 100%;
+    opacity: 0;                  
+    cursor: pointer;
+    appearance: none;
+}

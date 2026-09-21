@@ -13,8 +13,8 @@ body {
   -moz-osx-font-smoothing: grayscale;
   background: linear-gradient(to bottom,
       #ffffff 0px,
-      #ffffff 100px,
-      var(--background-color) 100%);
+      #ffffff 50px,
+      var(--background-color) 50vh);
   background-attachment: fixed;
   background-repeat: no-repeat;
   background-size: 100% 100vh;
